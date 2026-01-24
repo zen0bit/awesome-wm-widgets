@@ -51,12 +51,12 @@ local pomodoroarc_widget = wibox.container.mirror(pomodoroarc, { horizontal = tr
 local update_graphic = function(widget, stdout, _, _, _)
     local pomostatus = string.match(stdout, "  (%D?%D?):%D?%D?")
     if pomostatus == "--" then
-text.font      = "Inconsolata Medium 13"
-        widget.colors = { beautiful.widget_main_color }
+      text.font = "Inconsolata Medium 13"
+      widget.colors = { beautiful.widget_main_color }
       text.text = "25"
       widget.value = 1
     else
-text.font      = "Inconsolata Medium 13"
+      text.font = "Inconsolata Medium 13"
       local pomomin = string.match(stdout, "[ P]?[BW](%d?%d?):%d?%d?")
       local pomosec = string.match(stdout, "[ P]?[BW]%d?%d?:(%d?%d?)")
       local pomodoro = pomomin * 60 + pomosec
@@ -64,15 +64,6 @@ text.font      = "Inconsolata Medium 13"
       local status = string.match(stdout, "([ P]?)[BW]%d?%d?:%d?%d?")
       local workbreak = string.match(stdout, "[ P]?([BW])%d?%d?:%d?%d?")
       text.text = pomomin
-
---    Helps debugging
-      --naughty.notify {
-        --text = pomomin,
-        --title = "pomodoro debug",
-        --timeout = 5,
-        --hover_timeout = 0.5,
-        --width = 200,
-      --}
 
       if status == " " then -- clock ticking
         if workbreak == "W" then
@@ -90,12 +81,12 @@ text.font      = "Inconsolata Medium 13"
         if workbreak == "W" then
           widget.colors = { beautiful.widget_yellow }
           widget.value = tonumber(pomodoro/(25*60))
-text.font      = "Inconsolata Medium 13"
+          text.font = "Inconsolata Medium 13"
           text.text = "PW"
         elseif workbreak == "B" then
           widget.colors = { beautiful.widget_yellow }
           widget.value = tonumber(pomodoro/(5*60))
-text.font      = "Inconsolata Medium 13"
+          text.font = "Inconsolata Medium 13"
           text.text = "PB"
         end
       end
@@ -103,8 +94,8 @@ text.font      = "Inconsolata Medium 13"
 end
 
 pomodoroarc:connect_signal("button::press", function(_, _, _, button)
-    if (button == 2) then awful.spawn(PAUSE_pomodoro_CMD, false)
-    elseif (button == 1) then awful.spawn(START_pomodoro_CMD, false)
+    if (button == 1) then awful.spawn(START_pomodoro_CMD, false)
+    elseif (button == 2) then awful.spawn(PAUSE_pomodoro_CMD, false)
     elseif (button == 3) then awful.spawn(STOP_pomodoro_CMD, false)
     end
 
