@@ -17,8 +17,8 @@ It is possible to customize widget by providing a table with all or some of the 
 
 | Name | Default | Description |
 |---|---|---|
-| `icon` | github.png from the widget sources | Widget icon displayed on the wibar |
-| `username` | your username | Required parameter |
+| `icon` | `github.png` from the widget sources | Widget icon displayed on the wibar |
+| `username` | Required | GitHub username |
 | `number_of_events` | 10 | Number of events to display in the list |
 
 ## Installation
@@ -47,7 +47,7 @@ s.mytasklist, -- Middle widget
 
 ## How it works
 
-Everything starts with this timer, which gets recent activities by calling GitHub [Events API](../awesome-wm-widgets/assets/img/screenshots/github-activity-widgetttps://developer.github.com/v3/activity/events/) and stores the response under /.cache/awmw/github-activity-widget/activity.json directory:
+Everything starts with this timer, which gets recent activities by calling GitHub [Events API](https://developer.github.com/v3/activity/events/) and stores the response under /.cache/awmw/github-activity-widget/activity.json directory:
 
 ```lua
 gears.timer {

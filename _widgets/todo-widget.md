@@ -3,13 +3,13 @@ layout: page
 ---
 # ToDo Widget
 
-This widget displays a list of to do items and allows to mark item as done/undone, delete an item and create new ones:
+This widget displays a list of todo items and allows marking item as done/undone, delete an item and create new ones:
 
-![screenshot](../awesome-wm-widgets/assets/img/screenshots/todo-widget/todo.gif)
+![screenshot](../awesome-wm-widgets/assets/img/widgets/screenshots/todo-widget/todo.gif)
 
-# Installation
+## Installation
 
-Widget persists todo items as a JSON, so in order to simplify JSON serialisation/deserialisation download a **json.lua** from this repository: https://github.com/rxi/json.lua under `~/.config/awesone` folder. And don't forget to star a repo :)
+Widget persists todo items as JSON, so in order to simplify JSON serialization/deserialization, download **json.lua** from this repository: https://github.com/rxi/json.lua under the `~/.config/awesome` folder. And don't forget to star the repo!
 
 Then clone this repository under **~/.config/awesome/** and add the widget in **rc.lua**:
 
@@ -24,8 +24,8 @@ s.mytasklist, -- Middle widget
         todo_widget(),
 		...      
 ```
-Also note that widget uses [Arc Icons](../awesome-wm-widgets/assets/img/screenshots/todo-widgetttps://github.com/horst3180/arc-icon-theme) and expects them to be installed under `/usr/share/icons/Arc/`.
+Also note that widget uses [Arc Icons](https://github.com/horst3180/arc-icon-theme) and expects them to be installed under `/usr/share/icons/Arc/`.
 
-# Theming
+## Theming
 
-Widget uses your theme's colors. In case you want to have different colors, without changing your theme, please create an issue for it. I'll extract them as a widget parameters.
+Widget uses your theme's colors. In case you want to have different colors, without changing your theme, please create an issue for it. I'll extract them as widget parameters.
